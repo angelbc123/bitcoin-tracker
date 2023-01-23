@@ -2,12 +2,31 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin Builder
+ *
+ * @property int $id
+ * @property float $mid
+ * @property float $bid
+ * @property float $ask
+ * @property float $last_price
+ * @property float $low
+ * @property float $high
+ * @property float $volume
+ * @property Carbon $valid_until
+ */
 class BitcoinState extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    protected $casts = [
+        'valid_until' => 'datetime'
+    ];
 }

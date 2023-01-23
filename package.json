@@ -15,5 +15,10 @@
         "sass": "^1.56.1",
         "vite": "^4.0.0",
         "vue": "^3.2.37"
+    },
+    "dependencies": {
+        "chart.js": "^4.2.0",
+        "chartjs-adapter-date-fns": "^3.0.0",
+        "date-fns": "^2.29.3"
     }
 }

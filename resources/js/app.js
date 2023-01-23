@@ -15,8 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import BitcoinChart from './components/BitcoinChart.vue';
+app.component('bitcoin-chart', BitcoinChart);
 
 /**
  * The following block of code may be used to automatically register your
