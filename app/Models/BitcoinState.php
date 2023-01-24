@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $high
  * @property float $volume
  * @property Carbon $valid_until
+ *
+ * @method whereSixMonthsBack()
  */
 class BitcoinState extends Model
 {
@@ -29,4 +31,10 @@ class BitcoinState extends Model
     protected $casts = [
         'valid_until' => 'datetime'
     ];
+
+    public function scopeWhereSixMonthsBack(Builder $builder): Builder
+    {
+        return $builder->whereDate('valid_until', '>=', Carbon::today()->subMonths(6))
+            ->whereDate('valid_until', '<=', Carbon::today());
+    }
 }

@@ -12,7 +12,9 @@ class BitcoinStateController extends Controller
 
     public function index()
     {
-        $bitcoinStateQuery = BitcoinState::query()
+        $bitcoinStateQuery = (new BitcoinState())
+            ->select(['last_price', 'valid_until'])
+            ->whereSixMonthsBack()
             ->get();
 
         return BitcoinStateResource::collection($bitcoinStateQuery);
