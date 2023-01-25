@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('bitcoin-states', [BitcoinStateController::class, 'index']);
+Route::get('bitcoin-states', [BitcoinStateController::class, 'index'])
+    ->name('bitcoin-states.index');
 
-Route::post('bitcoin-subscribers', [BitcoinSubscriberController::class, 'store']);
+Route::post('bitcoin-subscribers', [BitcoinSubscriberController::class, 'store'])
+    ->name('bitcoin-subscribers.store');
