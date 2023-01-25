@@ -34,9 +34,9 @@ class BitcoinSubscriberJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(): void
     {
-        $bitcoinSubscribers = BitcoinSubscriber::query()
+        BitcoinSubscriber::query()
             ->where('amount_threshold', '>', $this->bitcoinState->last_price)
             ->chunk(100, function($bitcoinSubscribers) {
                 Notification::send($bitcoinSubscribers, new BitcoinSubscriberNotification());
