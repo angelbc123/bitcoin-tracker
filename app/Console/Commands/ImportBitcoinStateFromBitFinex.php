@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\BitcoinSubscriberJob;
 use App\Models\BitcoinState;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -53,6 +54,8 @@ class ImportBitcoinStateFromBitFinex extends Command
         $bitcoinState->volume = $responseCollection->get('volume');
         $bitcoinState->valid_until = Carbon::createFromTimestamp($responseCollection->get('timestamp'));
         $bitcoinState->save();
+
+        BitcoinSubscriberJob::dispatch($bitcoinState);
 
         $this->info('BitcoinState was imported successfully!');
         return Command::SUCCESS;
