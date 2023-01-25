@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\BitcoinState;
 use App\Models\BitcoinSubscriber;
 use App\Notifications\BitcoinSubscriberNotification;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Notification;
@@ -12,6 +13,8 @@ use Tests\TestCase;
 
 class BitcoinSubscriberTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /**
      * A basic feature test example.
      *

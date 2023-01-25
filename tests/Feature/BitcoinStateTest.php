@@ -3,12 +3,14 @@
 namespace Tests\Feature;
 
 use App\Models\BitcoinState;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class BitcoinStateTest extends TestCase
 {
+    use DatabaseMigrations;
     /**
      * A basic feature test example.
      *
