@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\BitcoinStateController;
+use App\Http\Controllers\Api\BitcoinSubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('bitcoin-states', [BitcoinStateController::class, 'index']);
+
+Route::post('bitcoin-subscribers', [BitcoinSubscriberController::class, 'store']);

@@ -18,6 +18,9 @@ const app = createApp({});
 import BitcoinChart from './components/BitcoinChart.vue';
 app.component('bitcoin-chart', BitcoinChart);
 
+import BitcoinSubscriber from './components/BitcoinSubscriber.vue';
+app.component('bitcoin-subscriber', BitcoinSubscriber);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

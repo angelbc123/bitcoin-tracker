@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="{{ csrf_token() }}" name="csrf-token">
 
         <title>Bitcoin tracker</title>
 
@@ -19,7 +20,7 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body class="antialiased" id="app">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" >
@@ -31,6 +32,7 @@
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <bitcoin-chart></bitcoin-chart>
+                    <bitcoin-subscriber></bitcoin-subscriber>
                 </div>
 
             </div>
