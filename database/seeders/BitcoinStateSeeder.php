@@ -16,7 +16,7 @@ class BitcoinStateSeeder extends Seeder
      */
     public function run()
     {
-        foreach(range(1,200) as $index) {
+        foreach(range(200,1) as $index) {
             $ask = rand(1000, 100000) / 10;
             $bid = $ask - 1;
             $mid = ($bid + $ask) / 2;
